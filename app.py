@@ -1,9 +1,12 @@
 from flask import Flask, request, jsonify
 from clickhouse_connect import get_client
 from datetime import datetime
+from flask_cors import CORS 
 import os
 
 app = Flask(__name__)
+# Enable CORS for all routes
+CORS(app)
 
 # Initialize ClickHouse client using environment variables
 client = get_client(
